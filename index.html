@@ -58,3 +58,20 @@ td1.innerHTML = _key;
 td2.innerHTML = strage.getItem(_key);
 }
 }
+  
+  function removeStorage(){
+    var key = docment.getElementById("textkey").value;
+    storage.removeItem(key);
+    key = ""
+    viewStorage();
+  }
+  
+  function removeallstorage(){
+    storage.clear();
+    viewstorage();
+  }
+}
+  </script>
+  
+  </body>
+</html>
