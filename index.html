@@ -96,7 +96,7 @@ td2.innerHTML = strage.getItem(_key);
       
       var reader = new FileReader();
       
-      if(if.type.match('image.*')&&!f.type.match('text.*')){
+      if(!f.type.match('image.*')&&!f.type.match('text.*')){
         alert("画像ファイルとテキストファイル以外は表示できません。");
         continue;
       }
