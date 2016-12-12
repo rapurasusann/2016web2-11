@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>HTML API</title>
+</head>
+<body>
+<section id="main">
+保存するKey:<input id ="textkey" type="text"/>
+保存する値:<input id ="textdata" type="text"/>
+<button id="bottun" onclick="setsessionstorage()">保存</button>
+<button id="bottun" onclick="removeStorage()">消去</button>
+<button id="bottun" onclick="removeallStorage()">すべて消去
+</button><table border="1">
+<tr>
+<th>キー</th><th>値</th>
+</tr>
+<tbody id="list">
+</tbody>
+</table>
+</section>
+<script type="text/javascript">
+if(typeof sessionStorage === "undefined"){
+window.alert("この環境ではWeb Storageが使えません");
+}else{
+var storage = sessionStorage;
+
+function setsessionStorage(){
+
+var key = document.getElwmwntById("textkey").value;
+var value =　document.getElwmwntById("textdata").value;
+
+if(key && value){
+stage.setItem(key,value);
+}
+
+key = "";
+value = "";
+
+viewStorage();
+}
+
+function viewStorage(){
+
+var list = docment.getElementById("list")
+while (list.firstchild) list.removechild(list.firstChild);
+
+for(var i=0; i < storage.length;i++){
+var _key = storage.key(i);
+
+var tr =document.createElement("tr");
+var td1 =document.createElement("td");
+var td2 =document.createElement("td");
+list.appendChild(tr);
+tr.sppendChild(td1);
+tr.sppendChild(td2);
+td1.innerHTML = _key;
+td2.innerHTML = strage.getItem(_key);
+}
+}
